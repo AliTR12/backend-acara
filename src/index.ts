@@ -13,13 +13,12 @@ async function init() {
     const app = express();
 
     app.use(bodyParser.json());
-    const port = 3000;console.log("Server initialization started.");
-console.log("Database connection established.");
-console.log("Server is running at http://localhost:3000");
+    const port = 3000;
+
 
     app.get("/", (req, res) => {
       res.status(200).json({
-        message: "Hello World",
+        message: "Server is running",
         data: null,
       });
     });
