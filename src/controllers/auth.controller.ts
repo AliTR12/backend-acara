@@ -58,6 +58,14 @@ export default {
     }
   },
   async login(req: Request, res: Response) {
+    /**
+     #swager.requestBody = {
+     required: true,
+     schema: {
+       $ref: "#/components/schemas/LoginRequest",
+       }
+       }
+     */
     //ambil data user berdasarkan "identifier" -> username atau email
     const { identifier, password } = req.body as unknown as TLogin;
     try {
@@ -96,6 +104,11 @@ export default {
     }
   },
   async me(req: IReqUser, res: Response) {
+    /**
+     #swagger.security = [{
+      "bearerAuth": []
+     }]
+     */
     try {
       const user = req.user;
       const result = await UserModel.findById(user?.id);
@@ -103,13 +116,12 @@ export default {
         message: "Success get user profile",
         data: result,
       });
-    } 
-    catch (error) {
+    } catch (error) {
       const err = error as unknown as Error;
       res.status(400).json({
         message: err.message,
         data: null,
       });
     }
-  }
+  },
 };
