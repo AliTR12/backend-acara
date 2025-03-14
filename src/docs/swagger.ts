@@ -26,19 +26,19 @@ const doc = {
     },
     schemas: {
       LoginRequest: {
-        identifier: "alitr",
-        password: "Atr12",
+        identifier: "username",
+        password: "secretpassword",
       },
       RegisterRequest: {
-        fullName: "Ucup",
-        username: "ucup",
-        email: "fc861d5y1587@student.devacademy.id",
-        password: "1234",
-        confirmPassword: "1234",
+        fullName: "member2025",
+        username: "member2025",
+        email: "member2025@yopmail.com",
+        password: "Member1234",
+        confirmPassword: "Member1234",
       },
       ActivationRequest: {
-        code: "abcdef"
-      }
+        code: "abcdef",
+      },
     },
   },
 };
